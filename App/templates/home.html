@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+<!-- Navbar content -->
+{% block navbar-content %}
+    <i style="color:yellowgreen;" class="fas fa-user-alt"></i>&nbsp;&nbsp; Character List
+{% endblock navbar-content %}
+
+
+
+<!-- Page content -->
+{% block content %}
+    <div class="container">
+        <br><br><br>
+
+        <table class="table table-bordered" id="example" style="text-align: center;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <!-- Data from backend -->
+            {% for character in  characters%}
+            <tr>
+                <td><a href="{% url 'detail' character.id %}">{{ character.name }}</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div> <!-- END // container -->
+
+<br><br><br><br>
+{% endblock content %}
