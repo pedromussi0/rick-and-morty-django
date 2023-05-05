@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+<!-- Navbar content -->
+{% block navbar-content %}
+    <a href="{% url 'home' %}">
+        <i style="color:yellowgreen;" class="fas fa-user-alt"></i>&nbsp;&nbsp; Character List
+    </a>
+{% endblock navbar-content %}
+
+
+
+
+{% block content %}
+  <h1>Episode List</h1>
+  <ul>
+    {% for episode in episodes %}
+      <li><a href="{% url 'episode_detail' episode.id %}">{{ episode.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

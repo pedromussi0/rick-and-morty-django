@@ -18,3 +18,10 @@ class Character(models.Model):
         if not self.image:
             self.image = f"https://rickandmortyapi.com/api/character/avatar/{self.id}.jpeg"
         super().save(*args, **kwargs)
+
+
+class Episodes(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=200, default="Unknown")
+    episode = models.CharField(max_length=10)
+    characters = models.ManyToManyField(Character, related_name='episodes')

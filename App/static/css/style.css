@@ -7,6 +7,7 @@ body {
     height: 100%;
     margin: 0;
     max-width: 100%;
+    background-color: #191A19;
 }
 /* ---------
 FOOTER
@@ -15,9 +16,26 @@ FOOTER
 .wrapper {
     min-height: 100%;
     margin-bottom: -50px;
+    background-color: #191A19;
 }
 #footer,
 .push {
     height: 50px;
 }
+
+/* ---------
+NAVBAR
+----------- */
+
+.text-custom {
+  color: #4E9F3D; /* Change this to your desired color */
+}
+
+.bg-custom {
+  background-color: #191A19; /* Change this to your desired color */
+}
+
+/* ---------
+GRID CARD EXPAND
+ ---------- */
 

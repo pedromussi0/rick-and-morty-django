@@ -1,32 +1,44 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 <!-- Navbar content -->
 {% block navbar-content %}
-    <i style="color:yellowgreen;" class="fas fa-user-alt"></i>&nbsp;&nbsp; Character List
+
 {% endblock navbar-content %}
+
 
 
 
 <!-- Page content -->
 {% block content %}
     <div class="container">
-        <br><br><br>
-
-        <table class="table table-bordered" id="example" style="text-align: center;">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                </tr>
-            </thead>
-            <!-- Data from backend -->
-            {% for character in  characters%}
-            <tr>
-                <td><a href="{% url 'detail' character.id %}">{{ character.name }}</a></td>
-            </tr>
+          <div class="row" id="cards-container">
+            {% for character in characters %}
+                <div class="col-md-3 mb-2 card-item">
+                  <div class="card">
+                    <img src="{{ character.image }}" class="card-img-top character-img" alt="{{ character.name }}">
+                    <div class="card-body">
+                      <h3 class="card-title">{{ character.name }}</h3>
+                      <div class="card-text" style="display: none;">
+                        <p>Gender: {{ character.gender }}</p>
+                        <p>Status: {{ character.status }}</p>
+                        <p>Species: {{ character.species }}</p>
+                        <p>Type: {{ character.type }}</p>
+                        <p>Origin: {{ character.origin }}</p>
+                        <p>Location: {{ character.location }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             {% endfor %}
-        </table>
+          </div>
+    </div>
 
-    </div> <!-- END // container -->
 
-<br><br><br><br>
 {% endblock content %}
+
+{% block scripts %}
+  <script src="{% static 'js/buttonclick.js' %}"></script>
+
+{% endblock %}

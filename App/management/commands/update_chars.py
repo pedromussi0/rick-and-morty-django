@@ -16,7 +16,6 @@ class Command(BaseCommand):
                 break
             data = response.json()
             for character_data in data['results']:
-                # Extract the character's photo URL from the API response
 
                 # Check if the character already exists in the database
                 character, created = Character.objects.get_or_create(

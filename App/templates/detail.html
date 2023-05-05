@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 
+<!-- Navbar content -->
+{% block navbar-content %}
+{% endblock navbar-content %}
+
+
 {% block content %}
   <h1>{{ character.name }}</h1>
-  <img src="{{ character.image }}" alt="{{ character.name }}">
-
   <p>Status: {{ character.status }}</p>
   <p>Species: {{ character.species }}</p>
   <p>Type: {{ character.type }}</p>
