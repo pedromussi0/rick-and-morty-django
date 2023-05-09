@@ -39,3 +39,36 @@ NAVBAR
 GRID CARD EXPAND
  ---------- */
 
+.card {
+  border: none;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 10px #888;
+  cursor: pointer;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+
+
+
+
+.card-item:hover .card {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Popup modal */
+.modal-dialog {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.modal-dialog .modal-content {
+  margin: auto;
+}

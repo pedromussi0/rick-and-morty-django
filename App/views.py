@@ -10,7 +10,13 @@ def home(request):
 
 def detail_view(request, character_id):
     character = get_object_or_404(Character, id=character_id)
-    context = {'character': character}
+    context = {
+        'character': character,
+        'gender': character.gender,
+        'status': character.status,
+        'species': character.species,
+        'type': character.type,
+    }
     return render(request, 'detail.html', context)
 
 
