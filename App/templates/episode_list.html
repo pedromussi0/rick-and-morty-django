@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 <!-- Navbar content -->
 {% block navbar-content %}
@@ -11,10 +12,14 @@
 
 
 {% block content %}
-  <h1>Episode List</h1>
-  <ul>
-    {% for episode in episodes %}
-      <li><a href="{% url 'episode_detail' episode.id %}">{{ episode.name }}</a></li>
-    {% endfor %}
-  </ul>
+  <h1 style="color:azure;text-align: center;margin-bottom: 100px;">Episode List</h1>
+    <div class="episodes_row">
+      {% for episode in episodes %}
+        <div class="col-md-2">
+          <div class="episode-card">
+            <a href="{% url 'episode_detail' episode.id %}">{{ episode.name }}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
 {% endblock %}
